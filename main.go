@@ -25,7 +25,7 @@ func main() {
 			return
 		}
 
-		fmt.Print("Введите знак (+, -, *, /, ^) ")
+		fmt.Print("Введите знак (+, -, *, /, ^): ")
 		_, err = fmt.Scan(&char)
 		if err != nil {
 			fmt.Println("Ошибка ввода знака")
@@ -42,7 +42,7 @@ func main() {
 			fmt.Printf("Результат: %.2f\n", first*second)
 		case "/":
 			if second == 0 {
-				fmt.Println("Ошибка: деление на ноль") // Исправлено: добавлен \n
+				fmt.Println("Ошибка: деление на ноль")
 			} else {
 				fmt.Printf("Результат: %.2f\n", first/second)
 			}
@@ -59,10 +59,11 @@ func main() {
 		_, err = fmt.Scan(&choice)
 		if err != nil {
 			fmt.Println("Ошибка ввода выбора")
+			return
 		}
 
 		if choice != "y" {
-			fmt.Println("Завершение программы")
+			fmt.Println("Завершение программы.")
 			break
 		}
 	}
